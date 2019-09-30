@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Lisa töötaja</h2>
+
+<form action="/lisatootaja/" method="post">
+  {% csrf_token %}
+  asutus:<br>
+  <select name="asutus" required>
+    {% for asutus in asutused %}
+    <option value="{{asutus.pk}}">
+      {{asutus.nimi}}
+    </option>
+    {% endfor %}
+  </select>
+  <br>
+  eesnimi:<br>
+  <input type="text" name="eesNimi" value="" required>
+  <br>
+  perekonnanimi:<br>
+  <input type="text" name="perekonnaNimi" value="" required>
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+{% endblock content %}

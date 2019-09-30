@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Siin kuvatakse kõik töötajaid</h1>
+
+  <ul>
+  {% for tootaja in tootajad %}
+    <li>{{tootaja.pk}}, {{tootaja.asutus.nimi}}, {{tootaja.eesNimi}} {{tootaja.perekonnaNimi}} <a href="/kustutatootaja/?id={{tootaja.pk}}">Kustuta </a></li>
+  {% endfor %}
+  </ul>
+{% endblock content %}
