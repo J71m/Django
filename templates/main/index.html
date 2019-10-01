@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Django näidis</h1>
-<ul>
-  <li><a href="/lisaasutus">Lisa asutus</a></li>
-  <li><a href="/lisatootaja">Lisa töötaja</a></li>
-  <li><a href="/vaatatootaja">Vaata töötajaid</a></li>
-</ul>
+<h2>Haldus portaal</h2>
+<hr>
+
+<div class="list-group" style="width: 25%">
+  <p>Haldus tegevused:</p>
+  <a href="/lisaasutus" class="list-group-item list-group-item-action">Lisa asutus</a>
+  <a href="/lisatootaja" class="list-group-item list-group-item-action">Lisa töötaja</a>
+  <a href="/vaatatootaja" class="list-group-item list-group-item-action">Vaata töötajaid</a>
+</div>
 {% endblock content %}

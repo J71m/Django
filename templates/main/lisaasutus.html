@@ -2,12 +2,14 @@
 
 {% block content %}
 <h2>Lisa asutus</h2>
-
-<form action="/lisaasutus/" method="post">
-  {% csrf_token %}
-  Asutuse nimi:<br>
-  <input type="text" name="nimi" value="" required>
-  <br><br>
-  <input type="submit" value="Submit">
-</form> 
+<hr>
+<div style="width: 25%">
+  <form action="/lisaasutus/" method="post" class="form-group">
+    {% csrf_token %}
+    Asutuse nimi:<br>
+    <input class="form-control" type="text" name="nimi" value="" required>
+    <br><br>
+    <input class="btn btn-primary" type="submit" value="Submit" style="float: right;">
+  </form> 
+</div>
 {% endblock content %}

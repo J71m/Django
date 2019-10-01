@@ -3,23 +3,28 @@
 {% block content %}
 <h2>Lisa töötaja</h2>
 
-<form action="/lisatootaja/" method="post">
-  {% csrf_token %}
-  asutus:<br>
-  <select name="asutus" required>
-    {% for asutus in asutused %}
-    <option value="{{asutus.pk}}">
-      {{asutus.nimi}}
-    </option>
-    {% endfor %}
-  </select>
-  <br>
-  eesnimi:<br>
-  <input type="text" name="eesNimi" value="" required>
-  <br>
-  perekonnanimi:<br>
-  <input type="text" name="perekonnaNimi" value="" required>
-  <br><br>
-  <input type="submit" value="Submit">
-</form> 
+<hr>
+
+<div style="width: 25%">
+  <form action="/lisatootaja/" method="post" class="form-group">
+    {% csrf_token %}
+    Asutus:<br>
+    <select class="browser-default custom-select" name="asutus" required>
+      {% for asutus in asutused %}
+      <option value="{{asutus.pk}}">
+        {{asutus.nimi}}
+      </option>
+      {% endfor %}
+    </select>
+    <br>
+    <br>
+    Eesnimi:<br>
+    <input class="form-control" type="text" name="eesNimi" value="" required>
+    <br>
+    Perekonnanimi:<br>
+    <input class="form-control" type="text" name="perekonnaNimi" value="" required>
+    <br><br>
+    <input class="btn btn-primary" type="submit" value="Submit" style="float: right;">
+  </form> 
+</div>
 {% endblock content %}

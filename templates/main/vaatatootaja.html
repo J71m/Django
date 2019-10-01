@@ -1,11 +1,29 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
+<h2>Siin kuvatakse kõik töötajaid</h2>
 
-{% block content %}
-  <h1>Siin kuvatakse kõik töötajaid</h1>
+<hr>
 
-  <ul>
-  {% for tootaja in tootajad %}
-    <li>{{tootaja.pk}}, {{tootaja.asutus.nimi}}, {{tootaja.eesNimi}} {{tootaja.perekonnaNimi}} <a href="/kustutatootaja/?id={{tootaja.pk}}">Kustuta </a></li>
-  {% endfor %}
-  </ul>
-{% endblock content %}
+<table class="table" style="width: 25%;">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Asutus</th>
+			<th scope="col">Eesnimi</th>
+			<th scope="col">Perekonnanimi</th>
+			<th scope="col">Tegevus</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for tootaja in tootajad %}
+		<tr>
+      <th scope="row">{{tootaja.pk}}</th>
+      <td>{{tootaja.asutus.nimi}}</td>
+      <td>{{tootaja.eesNimi}}</td>
+      <td>{{tootaja.perekonnaNimi}}</td>
+      <td><a href="/kustutatootaja/?id={{tootaja.pk}}">Kustuta</a></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+  <br>
+  
+	{% endblock content %}
