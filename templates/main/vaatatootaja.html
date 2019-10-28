@@ -3,7 +3,7 @@
 
 <hr>
 
-<table class="table" style="width: 25%;">
+<table class="table" style="width: 50%; margin: auto;">
 	<thead>
 		<tr>
 			<th scope="col">ID</th>
@@ -16,11 +16,11 @@
 	<tbody>
 		{% for tootaja in tootajad %}
 		<tr>
-      <th scope="row">{{tootaja.pk}}</th>
-      <td>{{tootaja.asutus.nimi}}</td>
-      <td>{{tootaja.eesNimi}}</td>
-      <td>{{tootaja.perekonnaNimi}}</td>
-      <td><a href="/kustutatootaja/?id={{tootaja.pk}}">Kustuta</a></td>
+			<th scope="row">{{tootaja.pk}}</th>
+			<td>{{tootaja.asutus.nimi}}</td>
+			<td>{{tootaja.eesNimi}}</td>
+			<td>{{tootaja.perekonnaNimi}}</td>
+			<td><a href="/kustutatootaja/?id={{tootaja.pk}}">Kustuta</a></td>
 		</tr>
 		{% endfor %}
 	</tbody>

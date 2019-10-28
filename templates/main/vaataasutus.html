@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block content %}
+<h2>Siin kuvatakse kõik asutused</h2>
+
+<hr>
+{% if linkedworker == True %}
+<span style="color: red;">Kustutada saab asutusi, kus ei ole töötajaid</span>
+{% endif %}
+<table class="table" style="width: 50%; margin: auto;">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Asutus</th>
+			<th scope="col">Muuda</th>
+			<th scope="col">Kustuta</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for asutus in asutused %}
+		<tr>
+			<th scope="row">{{asutus.pk}}</th>
+			<td>{{asutus.nimi}}</td>
+			<td><a href="/muudaasutus/?id={{asutus.pk}}">Muuda</a></td>
+			<td><a href="/kustutaasutus/?id={{asutus.pk}}">Kustuta</a></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+  <br>
+  
+	{% endblock content %}

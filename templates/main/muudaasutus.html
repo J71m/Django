@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Muuda asutus: {{ asutus.nimi }}</h2>
+<hr>
+<div style="width: 25%">
+  <form action="/muudaasutusnimi/" method="post" class="form-group">
+    {% csrf_token %}
+    Asutuse uus nimi:<br>
+    <input class="form-control" type="text" name="nimi" value="{{ asutus.nimi }}" required>
+    <br><br>
+    <input type="hidden" name="id" value="{{ asutus.id }}" >
+    <input class="btn btn-primary" type="submit" value="Submit" style="float: right;">
+  </form> 
+</div>
+{% endblock content %}
